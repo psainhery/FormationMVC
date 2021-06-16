@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@*Razor est un moteur de vues (generateur de vue) -
+*@
+
+@*
+    La declaration des variables avec Razor peuvent se faire en utilisant le mot cle "var"
+    ou en utilisant la syntaxe classique, en definissant le type de donnes
+
+*@
+
+@{
+    var v1 = 10;
+    int n = 100;
+    double d = 10.05;
+
+    @: ceci est un texte
+
+    <text>
+        ceci est un autre bloc de texte
+    </text>
+}
+
+<br/>
+
+Afficher le symbol @@
+
+<br/>
+
+
+
+@{ //tableau
+    string[] clients = { "dawan", "jehann", "covid" };
+
+
+    //Dictionnary
+
+    var mesApps = new Dictionary<string, string>();
+    mesApps.Add("App1", "ASP.Net");
+    mesApps.Add("App2", "Java");
+    mesApps.Add("App3", " Vue JS");
+}
+
+<h3>
+    Tableau
+</h3>
+Client a la position 1 du tableau: @clients[1]
+
+<h3> Dictionnaire</h3>
+<p> La seconde app dans la dictionnaire est: @mesApps["App2"]</p>
+
+
+<h3>CONDITION IF/ELSE</h3>
+@{ 
+    var jour = false;
+    if(jour)
+            {
+                @DateTime.Now;
+            }
+    else
+    {
+                @: pas de date disponible
+    }
+}
+
+<h3>La boucle SWITCH </h3>
+@{ 
+    var civilite = "M";
+    var message = "";
+    switch(civilite)
+
+    {
+        case "M":
+            message = "Bonjour Monsieur";
+            break;
+        case "Mme":
+            message = "Bonjour Madame";
+            break;
+
+        default:
+            message = "Inconnu";
+            break;
+    }
+    <p>@message</p>
+
+}
+
+<br />
+
+@section footer
+{
+    Footer de la Page Index
+    }
+

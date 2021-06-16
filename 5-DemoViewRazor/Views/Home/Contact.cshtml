@@ -1,0 +1,47 @@
+﻿@*
+    On peut transferer des donnes du controleur vers la vue comme un objet de modele fortement type
+        on dit a cette vue qu'on lui transmet le type employe afin que la vue soit fortement typee
+*@
+
+@*@model _5_DemoViewRazor.Models.Employe*@
+@model _5_DemoViewRazor.ModelView.ProdEmploye
+
+
+@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+
+@section maSection{
+    Contenu de la section
+
+}
+
+@section sousMenu{
+    <ul class="nav nav-pills">
+        ...
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Dropdown <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                ...
+            </ul>
+        </li>
+        ...
+    </ul>
+}
+
+<p>
+    contenu de l'objet transmis par l' action contact en utilisant une vue fortement type
+</p>
+@*ID: @Model.Id
+    Nom:@Model.Nom
+    Prenom: @Model.Prenom
+*@
+
+@Model.Produit.Id
+@Model.Employe.Id
+@Model.Employe.Nom
